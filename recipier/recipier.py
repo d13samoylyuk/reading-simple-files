@@ -24,7 +24,6 @@ def read_file(filename, encoding='UTF-8', as_lines=True):
     with open(filename, encoding=encoding) as file:
         if as_lines:
             return [line.strip() for line in file.readlines()]
-        
         return file.read()
 
 
