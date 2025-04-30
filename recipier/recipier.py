@@ -15,7 +15,7 @@ def get_shop_list_by_dishes(dishes, person_count):
                     'quantity': 0
                 }
             ingres[ingredient['ingredient_name']]['quantity'] += (
-                ingredient['quantity'] * person_count)
+                ingredient['quantity'] * person_count * dishes.count(dish))
 
     return ingres
 
@@ -51,3 +51,5 @@ def convert_recipes(file):
 pprint(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
 print()
 pprint(get_shop_list_by_dishes(['Фахитос', 'Омлет'], 1))
+print()
+pprint(get_shop_list_by_dishes(['Омлет', 'Омлет'], 2))
